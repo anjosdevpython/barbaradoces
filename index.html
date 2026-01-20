@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bárbara Rosa | Doces Artesanais</title>
+
+    <!-- Meta Tags for SEO & Sharing -->
+    <meta name="description"
+        content="Experimente os melhores doces artesanais de Curitiba. Bombons de morango, bolos de pote, pavês gourmet e cones trufados feitos com carinho pela Bárbara Rosa. Peça agora!">
+    <meta name="keywords"
+        content="doces artesanais, bombom de morango, bolo de pote, banoffe, pavê gourmet, cones trufados, palha italiana, doceria curitiba, bárbara rosa doces">
+    <meta name="author" content="Bárbara Rosa">
+    <link rel="canonical" href="https://barbararosa.netlify.app/">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://barbararosa.netlify.app/">
+    <meta property="og:title" content="Bárbara Rosa | Doccaria Artesanal - O Melhor de Curitiba">
+    <meta property="og:description"
+        content="Peça online nossas delícias artesanais. Bombons, bolos, pavês e muito mais feitos com amor.">
+    <meta property="og:image" content="https://barbararosa.netlify.app/public/logo.png">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://barbararosa.netlify.app/">
+    <meta property="twitter:title" content="Bárbara Rosa | Docaria Artesanal">
+    <meta property="twitter:description" content="Doces artesanais feitos com carinho em Curitiba.">
+    <meta property="twitter:image" content="https://barbararosa.netlify.app/public/logo.png">
+
+    <!-- JSON-LD Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Bakery",
+      "name": "Bárbara Rosa | Doces Artesanais",
+      "image": "https://barbararosa.netlify.app/public/logo.png",
+      "@id": "https://barbararosa.netlify.app/",
+      "url": "https://barbararosa.netlify.app/",
+      "telephone": "+5541998541513",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "",
+        "addressLocality": "Curitiba",
+        "addressRegion": "PR",
+        "postalCode": "",
+        "addressCountry": "BR"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": -25.4284,
+        "longitude": -49.2733
+      },
+      "openingHoursSpecification": {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": [
+          "Monday",
+          "Tuesday",
+          "Wednesday",
+          "Thursday",
+          "Friday",
+          "Saturday"
+        ],
+        "opens": "09:00",
+        "closes": "18:00"
+      },
+      "sameAs": [
+        "https://wa.me/5541998541513"
+      ]
+    }
+    </script>
+
+    <!-- Dependencies -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Poppins', 'sans-serif'],
+                    },
+                    colors: {
+                        brand: '#df9e9b',
+                    }
+                }
+            }
+        }
+    </script>
+
+    <link rel="stylesheet" href="./public/style.css">
+</head>
+
+<body class="text-white selection:bg-brand/30 antialiased overflow-x-hidden">
+    <div class="overlay fixed inset-0 z-0"></div>
+
+    <!-- Desktop Sticky Navigation -->
+    <nav id="desktop-nav"
+        class="hidden md:flex fixed top-0 left-0 right-0 z-50 glass border-b border-white/10 px-8 py-4 items-center justify-between translate-y-[-100%] transition-transform duration-500">
+        <div class="flex items-center gap-3">
+            <img src="./public/logo.png" alt="Logo" class="w-10 h-10 rounded-full border border-brand">
+            <span class="font-bold tracking-tighter text-lg">Bárbara Rosa</span>
+        </div>
+        <div class="flex items-center gap-8 font-bold text-sm uppercase tracking-widest">
+            <a href="#" onclick="window.scrollTo({top: 0, behavior: 'smooth'}); return false;"
+                class="hover:text-brand transition-colors">Início</a>
+            <a href="#products-grid"
+                onclick="document.getElementById('products-grid').scrollIntoView({behavior:'smooth'}); return false;"
+                class="hover:text-brand transition-colors">Menu</a>
+            <a href="#pix-section"
+                onclick="document.getElementById('pix-section').scrollIntoView({behavior:'smooth'}); return false;"
+                class="hover:text-brand transition-colors">Pix</a>
+            <button onclick="toggleCart(true)"
+                class="bg-brand/10 hover:bg-brand/20 px-4 py-2 rounded-full border border-brand/20 flex items-center gap-2 transition-all">
+                <i class="fas fa-shopping-cart"></i>
+                Carrinho
+            </button>
+        </div>
+    </nav>
+
+    <div class="relative z-10 w-full max-w-6xl mx-auto px-4 pb-20">
+        <!-- Header -->
+        <header class="flex flex-col items-center text-center pt-12 pb-8 md:pt-20 md:pb-16">
+            <div id="easter-egg-msg">Você encontrou um Easter Egg! 🥚✨</div>
+
+            <div class="relative group">
+                <div class="logo-container" onclick="toggleEasterEgg()">
+                    <div class="logo-inner">
+                        <div class="logo-front glass shadow-2xl">
+                            <img src="./public/logo.png" alt="Bárbara Rosa"
+                                class="w-full h-full object-cover rounded-full scale-[1.4]"
+                                onerror="this.src='https://images.unsplash.com/photo-1556910103-1c02745aae4d?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80'">
+                        </div>
+                        <div class="logo-back">
+                            <img id="logo-qr" src="" alt="Site QR Code">
+                        </div>
+                    </div>
+                </div>
+
+                <div
+                    class="absolute -bottom-2 -right-2 md:bottom-2 md:right-2 bg-brand text-white p-2.5 md:p-4 rounded-full shadow-lg animate-soft-pulse pointer-events-none">
+                    <i class="fas fa-heart text-sm md:text-xl"></i>
+                </div>
+            </div>
+            <h1 class="text-4xl md:text-7xl font-extrabold tracking-tight mb-2 md:mb-4">Bárbara Rosa</h1>
+            <p class="text-brand font-semibold text-xl md:text-4xl">Doces Artesanais</p>
+            <p class="mt-4 text-sm md:text-lg opacity-80 italic max-w-sm md:max-w-xl mx-auto px-4">
+                “Doces feitos com carinho para adoçar seu dia 🍓🍫”
+            </p>
+        </header>
+
+        <!-- Search and Categories -->
+        <div class="max-w-md mx-auto mb-8">
+            <div class="relative">
+                <i class="fas fa-search absolute left-5 top-1/2 -translate-y-1/2 text-white/30"></i>
+                <input type="text" oninput="handleSearch(event)" placeholder="Procurar um doce..."
+                    class="w-full bg-white/5 border border-white/10 rounded-full py-4 pl-12 pr-6 outline-none focus:border-brand/50 focus:bg-white/10 transition-all font-medium">
+            </div>
+        </div>
+
+        <div id="category-filters" class="flex flex-wrap justify-center gap-2 mb-8 no-scrollbar">
+            <!-- Categories will be injected here -->
+        </div>
+
+        <!-- Sales Links -->
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-16">
+            <a href="https://wa.me/5541998541513" target="_blank"
+                class="bg-[#25D366] text-white font-bold py-6 px-4 rounded-2xl shadow-2xl flex items-center justify-center gap-3 text-lg uppercase tracking-widest transition-transform active:scale-95">
+                <i class="fa-brands fa-whatsapp text-2xl"></i>
+                Vendas no Whatsapp
+            </a>
+            <button onclick="document.getElementById('pix-section').scrollIntoView({behavior:'smooth'})"
+                class="border border-white/20 bg-white/5 text-white font-bold py-6 px-4 rounded-2xl shadow-2xl flex items-center justify-center gap-3 text-lg uppercase tracking-widest transition-transform active:scale-95">
+                <i class="fa-solid fa-qrcode text-xl text-brand"></i>
+                Pagar via Pix
+            </button>
+        </div>
+
+        <!-- Menu Title -->
+        <section>
+            <div class="flex items-center gap-6 mb-12">
+                <div class="h-px flex-1 bg-gradient-to-r from-transparent to-white/10"></div>
+                <h2 class="text-2xl md:text-3xl font-extrabold uppercase tracking-[0.3em] text-brand">Menu</h2>
+                <div class="h-px flex-1 bg-gradient-to-l from-transparent to-white/10"></div>
+            </div>
+
+            <!-- Products Grid -->
+            <div id="products-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+                <!-- Products will be injected here -->
+            </div>
+        </section>
+
+        <!-- Pix Section -->
+        <section id="pix-section" class="py-20 flex justify-center">
+            <div
+                class="glass p-10 rounded-[2.5rem] w-full max-w-2xl shadow-2xl border-white/10 text-center md:text-left">
+                <div class="flex flex-col md:flex-row items-center gap-5 mb-10">
+                    <div class="bg-brand/20 p-5 rounded-3xl">
+                        <i class="fas fa-qrcode text-brand text-4xl"></i>
+                    </div>
+                    <div>
+                        <h2 class="text-3xl font-bold">Pagamento Rápido</h2>
+                        <p class="text-xs opacity-50 uppercase tracking-[0.2em]">Pague agora via Pix</p>
+                    </div>
+                </div>
+
+                <div class="space-y-6">
+                    <div class="relative group">
+                        <span class="absolute left-6 top-1/2 -translate-y-1/2 font-bold text-3xl text-brand">R$</span>
+                        <input type="text" id="pix-amount" placeholder="0,00"
+                            class="w-full bg-white/5 border border-white/10 rounded-3xl py-6 pl-16 pr-8 outline-none focus:border-brand/50 focus:bg-white/10 transition-all font-bold text-3xl placeholder:text-white/10">
+                    </div>
+
+                    <button onclick="generatePix()"
+                        class="w-full bg-brand text-white font-bold py-6 rounded-3xl shadow-xl transition-all active:scale-[0.98] text-xl">
+                        GERAR QR CODE
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Pix Modal -->
+        <div id="pix-modal" class="hidden fixed inset-0 z-[60] flex items-center justify-center p-4">
+            <div onclick="closePixModal()" class="absolute inset-0 bg-black/80 backdrop-blur-md"></div>
+            <div
+                class="relative glass p-8 rounded-[2.5rem] w-full max-w-sm shadow-2xl border-white/10 text-center animate-scale-in">
+                <button onclick="closePixModal()"
+                    class="absolute top-6 right-6 text-white/40 hover:text-white transition-colors">
+                    <i class="fas fa-times text-xl"></i>
+                </button>
+
+                <div class="mb-6">
+                    <p class="text-brand font-bold text-sm uppercase tracking-widest mb-1">Pagamento para</p>
+                    <h3 id="pix-merchant-name" class="text-2xl font-bold">Bárbara Rosa</h3>
+                </div>
+
+                <div class="bg-white p-4 rounded-[1.5rem] shadow-2xl inline-block mb-6">
+                    <img id="pix-qr" src="" alt="QR Code Pix" class="w-48 h-48 mx-auto">
+                </div>
+
+                <div class="space-y-3">
+                    <button onclick="copyPixCode()" id="copy-pix-btn"
+                        class="w-full bg-white/5 border border-white/10 font-bold py-4 rounded-2xl flex items-center justify-center gap-3 transition-all active:scale-[0.98] hover:bg-white/10">
+                        <i class="fas fa-copy text-brand"></i>
+                        COPIAR PIX COPIA E COLA
+                    </button>
+                    <p class="text-[10px] text-white/40 uppercase tracking-tighter">Após o pagamento, envie o
+                        comprovante
+                        pelo WhatsApp</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <footer class="mt-20 text-center space-y-3 opacity-30 pb-24">
+            <p class="text-sm font-semibold tracking-widest uppercase">&copy; <span id="year"></span> Bárbara Rosa</p>
+            <p class="text-xs italic">Qualidade e ternura em cada pedaço.</p>
+            <p class="text-[10px] uppercase tracking-tighter">
+                Desenvolvido por <a href="https://allananjos.dev.br/" target="_blank"
+                    class="hover:text-brand transition-colors font-bold">Allan Anjos</a>
+            </p>
+        </footer>
+    </div>
+
+    <!-- Mobile Bottom Navigation -->
+    <div
+        class="fixed bottom-0 left-0 right-0 z-40 md:hidden glass border-t border-white/10 px-6 py-4 flex justify-around items-center rounded-t-[2rem]">
+        <button onclick="window.scrollTo({top: 0, behavior: 'smooth'})"
+            class="flex flex-col items-center gap-1 text-white/60 focus:text-brand transition-colors">
+            <i class="fas fa-home text-xl"></i>
+            <span class="text-[10px] uppercase font-bold tracking-widest">Início</span>
+        </button>
+        <button onclick="document.getElementById('products-grid').scrollIntoView({behavior:'smooth'})"
+            class="flex flex-col items-center gap-1 text-white/60 focus:text-brand transition-colors">
+            <i class="fas fa-utensils text-xl"></i>
+            <span class="text-[10px] uppercase font-bold tracking-widest">Menu</span>
+        </button>
+        <button onclick="document.getElementById('pix-section').scrollIntoView({behavior:'smooth'})"
+            class="flex flex-col items-center gap-1 text-white/60 focus:text-brand transition-colors">
+            <i class="fas fa-qrcode text-xl"></i>
+            <span class="text-[10px] uppercase font-bold tracking-widest">Pix</span>
+        </button>
+        <button onclick="toggleCart(true)"
+            class="flex flex-col items-center gap-1 text-white/60 focus:text-brand transition-colors relative">
+            <i class="fas fa-shopping-cart text-xl"></i>
+            <span class="text-[10px] uppercase font-bold tracking-widest">Carrinho</span>
+            <span id="nav-cart-count"
+                class="hidden absolute -top-1 -right-2 bg-brand text-white text-[8px] w-4 h-4 rounded-full flex items-center justify-center border border-zinc-900">0</span>
+        </button>
+    </div>
+
+    <!-- Floating Cart Button (Desktop) -->
+    <button onclick="toggleCart(true)"
+        class="hidden md:flex fixed bottom-6 right-6 z-40 bg-[#25D366] text-white p-5 rounded-full shadow-2xl items-center gap-3 transition-transform hover:scale-110 active:scale-90">
+        <i class="fas fa-shopping-cart text-2xl"></i>
+        <span id="cart-count" class="hidden font-bold">0</span>
+    </button>
+
+    <!-- Cart Drawer -->
+    <div id="cart-drawer" class="hidden fixed inset-0 z-50">
+        <div onclick="toggleCart(false)" class="absolute inset-0 bg-black/60 backdrop-blur-sm"></div>
+        <div
+            class="absolute top-0 right-0 h-full w-full max-w-md bg-zinc-900 shadow-2xl flex flex-col border-l border-white/10 animate-slide-in">
+            <div class="p-6 border-b border-white/10 flex justify-between items-center">
+                <div class="flex items-center gap-3 text-brand">
+                    <i class="fas fa-shopping-cart text-xl"></i>
+                    <h2 class="text-xl font-bold text-white">Meu Carrinho</h2>
+                </div>
+                <button onclick="toggleCart(false)" class="p-2 hover:bg-white/5 rounded-full">
+                    <i class="fas fa-times text-2xl"></i>
+                </button>
+            </div>
+
+            <div id="cart-items" class="flex-1 overflow-y-auto p-6 space-y-6">
+                <!-- Cart items will be injected here -->
+            </div>
+
+            <div id="cart-footer" class="hidden p-6 bg-black/40 border-t border-white/10 space-y-4">
+                <div class="flex justify-between items-center text-xl font-bold">
+                    <span>Subtotal:</span>
+                    <span id="cart-total" class="text-brand">R$ 0,00</span>
+                </div>
+                <button onclick="goToPixFromCart()"
+                    class="w-full bg-white/5 border border-white/10 text-white font-bold py-4 rounded-2xl flex items-center justify-center gap-3 transition-transform active:scale-95 hover:bg-white/10">
+                    <i class="fa-solid fa-qrcode text-brand"></i>
+                    PAGAR VIA PIX
+                </button>
+                <button onclick="checkout()"
+                    class="w-full bg-[#25D366] text-white font-bold py-5 rounded-2xl flex items-center justify-center gap-3 transition-transform active:scale-95">
+                    <i class="fa-brands fa-whatsapp text-2xl"></i>
+                    FINALIZAR NO WHATSAPP
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="./public/app.js"></script>
+</body>
+
+</html>

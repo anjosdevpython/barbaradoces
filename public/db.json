@@ -1,0 +1,121 @@
+{
+  "businessInfo": {
+    "whatsapp": "5541998541513",
+    "pixKey": "+5541998541513",
+    "name": "Bárbara Rosa"
+  },
+  "products": [
+    {
+      "id": "1",
+      "name": "Bombom de morango",
+      "price": 12.00,
+      "category": "Bombons",
+      "image": "./public/assets/products/bombom-morango.jpeg"
+    },
+    {
+      "id": "2",
+      "name": "Bolo de pote",
+      "price": 10.00,
+      "category": "Bolos",
+      "image": "./public/assets/products/bolo-de-pote.jpeg"
+    },
+    {
+      "id": "3",
+      "name": "Bombom de uva no pote",
+      "price": 10.00,
+      "category": "Bombons",
+      "image": "./public/assets/products/bombom-uva-pote.jpeg"
+    },
+    {
+      "id": "4",
+      "name": "Banoffe",
+      "price": 10.00,
+      "category": "Sobremesas",
+      "image": "./public/assets/products/banoffe.jpeg"
+    },
+    {
+      "id": "5",
+      "name": "Pavê de morango",
+      "price": 10.00,
+      "category": "Sobremesas",
+      "image": "./public/assets/products/pave-morango.jpeg"
+    },
+    {
+      "id": "6",
+      "name": "Pavê de ninho com Nutella",
+      "price": 10.00,
+      "category": "Sobremesas",
+      "image": "./public/assets/products/pave-ninho-nutella.jpeg"
+    },
+    {
+      "id": "7",
+      "name": "Mousse de maracujá",
+      "price": 10.00,
+      "category": "Sobremesas",
+      "image": "./public/assets/products/mousse-maracuja.jpeg"
+    },
+    {
+      "id": "8",
+      "name": "Palha Italiana Tradicional",
+      "price": 7.50,
+      "category": "Palhas",
+      "image": "./public/assets/products/palha-tradicional.jpeg"
+    },
+    {
+      "id": "9",
+      "name": "Palha de Oreo",
+      "price": 7.50,
+      "category": "Palhas",
+      "image": "./public/assets/products/palha-oreo.jpeg"
+    },
+    {
+      "id": "10",
+      "name": "Palha de Paçoca",
+      "price": 7.50,
+      "category": "Palhas",
+      "image": "./public/assets/products/palha-pacoca.jpeg"
+    },
+    {
+      "id": "11",
+      "name": "Cone trufado de maracujá",
+      "price": 6.50,
+      "category": "Cones",
+      "image": "./public/assets/products/cone-maracuja.jpeg"
+    },
+    {
+      "id": "12",
+      "name": "Cone trufado de limão",
+      "price": 6.50,
+      "category": "Cones",
+      "image": "./public/assets/products/cone-limao.jpeg"
+    },
+    {
+      "id": "13",
+      "name": "Cone trufado de ninho",
+      "price": 6.50,
+      "category": "Cones",
+      "image": "./public/assets/products/cone-ninho.jpeg"
+    },
+    {
+      "id": "14",
+      "name": "Cone trufado de nozes",
+      "price": 6.50,
+      "category": "Cones",
+      "image": "./public/assets/products/cone-nozes.jpeg"
+    },
+    {
+      "id": "15",
+      "name": "Cone trufado de pistache",
+      "price": 6.50,
+      "category": "Cones",
+      "image": "./public/assets/products/cone-pistache.jpeg"
+    },
+    {
+      "id": "16",
+      "name": "Travessa de Banoffe (≈ 1,1kg)",
+      "price": 55.00,
+      "category": "Travessas",
+      "image": "./public/assets/products/travessa-banoffe.jpeg"
+    }
+  ]
+}

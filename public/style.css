@@ -1,0 +1,240 @@
+body {
+    background: url('https://images.unsplash.com/photo-1578985545062-69928b1d9587?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=80') center center / cover no-repeat fixed;
+    -webkit-tap-highlight-color: transparent;
+}
+
+.overlay {
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.85));
+}
+
+.glass {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+.glass-hover:hover {
+    background: rgba(255, 255, 255, 0.15);
+    border-color: rgba(255, 255, 255, 0.25);
+}
+
+::-webkit-scrollbar {
+    width: 6px;
+}
+
+::-webkit-scrollbar-track {
+    background: rgba(0, 0, 0, 0.2);
+}
+
+::-webkit-scrollbar-thumb {
+    background: #df9e9b;
+    border-radius: 10px;
+}
+
+@keyframes slideIn {
+    from {
+        transform: translateX(100%);
+    }
+
+    to {
+        transform: translateX(0);
+    }
+}
+
+.animate-slide-in {
+    animation: slideIn 0.3s ease-out;
+}
+
+/* Desktop Hover Effects */
+.product-card {
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+@media (min-width: 1024px) {
+    .product-card:hover {
+        transform: translateY(-8px) scale(1.02);
+        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+        border-color: rgba(223, 158, 155, 0.4);
+    }
+
+    .product-card:hover .product-img {
+        transform: scale(1.15);
+    }
+}
+
+/* Mobile specific adjustments */
+@media (max-width: 640px) {
+    .no-scrollbar::-webkit-scrollbar {
+        display: none;
+    }
+
+    .no-scrollbar {
+        -ms-overflow-style: none;
+        /* IE and Edge */
+        scrollbar-width: none;
+        /* Firefox */
+    }
+
+    #category-filters {
+        justify-content: flex-start;
+        flex-wrap: nowrap;
+        overflow-x: auto;
+        padding-bottom: 8px;
+        margin-left: -1rem;
+        margin-right: -1rem;
+        padding-left: 1rem;
+        padding-right: 1rem;
+    }
+
+    .category-btn {
+        flex-shrink: 0;
+    }
+}
+
+/* Transitions for Filtering */
+.product-card {
+    animation: fadeIn 0.5s ease-out forwards;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes scaleIn {
+    from {
+        opacity: 0;
+        transform: scale(0.9);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+.animate-scale-in {
+    animation: scaleIn 0.3s ease-out forwards;
+}
+
+/* 3D Flip Card for Logo */
+.logo-container {
+    perspective: 1000px;
+    cursor: pointer;
+    width: 8rem;
+    height: 8rem;
+    margin-bottom: 2rem;
+    position: relative;
+    z-index: 20;
+}
+
+@media (min-width: 768px) {
+    .logo-container {
+        width: 14rem;
+        height: 14rem;
+    }
+}
+
+.logo-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    transition: transform 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+    transform-style: preserve-3d;
+}
+
+.logo-container.flipped .logo-inner {
+    transform: rotateY(180deg);
+}
+
+.logo-front,
+.logo-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    border-radius: 50%;
+}
+
+.logo-front {
+    border: 4px solid #df9e9b;
+    overflow: hidden;
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.3);
+}
+
+.logo-back {
+    transform: rotateY(180deg);
+    background: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 12%;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    border: 4px solid #df9e9b;
+}
+
+.logo-back img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+/* Easter Egg Toast */
+#easter-egg-msg {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0.5);
+    background: rgba(223, 158, 155, 0.95);
+    color: white;
+    padding: 1.5rem 3rem;
+    border-radius: 2rem;
+    font-weight: 800;
+    font-size: 1.5rem;
+    z-index: 100;
+    opacity: 0;
+    pointer-events: none;
+    transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
+    white-space: nowrap;
+    backdrop-filter: blur(10px);
+}
+
+@media (min-width: 768px) {
+    #easter-egg-msg {
+        padding: 2rem 4rem;
+        font-size: 2rem;
+    }
+}
+
+#easter-egg-msg.show {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1);
+}
+
+@keyframes soft-pulse {
+
+    0%,
+    100% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.1);
+    }
+}
+
+.animate-soft-pulse {
+    animation: soft-pulse 2s ease-in-out infinite;
+}
