@@ -134,6 +134,7 @@ body {
     margin-bottom: 2rem;
     position: relative;
     z-index: 20;
+    animation: soft-pulse 3s ease-in-out infinite;
 }
 
 @media (min-width: 768px) {
@@ -231,7 +232,7 @@ body {
     }
 
     50% {
-        transform: scale(1.1);
+        transform: scale(1.05);
     }
 }
 
