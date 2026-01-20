@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://barbararosa.netlify.app/sitemap.xml
+Sitemap: https://barbaradoces.vercel.app/sitemap.xml
