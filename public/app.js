@@ -66,11 +66,13 @@ async function init() {
 function renderSkeletons() {
     const grid = document.getElementById('products-grid');
     grid.innerHTML = Array(6).fill(0).map(() => `
-        <div class="glass p-4 rounded-[2rem] border-white/5">
-            <div class="aspect-square skeleton rounded-2xl mb-4"></div>
-            <div class="h-4 skeleton w-3/4 mb-2 rounded"></div>
-            <div class="h-3 skeleton w-1/2 mb-4 rounded"></div>
-            <div class="h-10 skeleton w-full rounded-xl"></div>
+        <div class="glass p-0 rounded-[2.5rem] border-white/5 overflow-hidden">
+            <div class="aspect-square skeleton w-full mb-6"></div>
+            <div class="px-8 pb-8">
+                <div class="h-6 skeleton w-3/4 mb-4 rounded-lg"></div>
+                <div class="h-8 skeleton w-1/2 mb-8 rounded-lg"></div>
+                <div class="h-14 skeleton w-full rounded-2xl"></div>
+            </div>
         </div>
     `).join('');
 }
@@ -224,15 +226,15 @@ function renderProducts(skipAnimation = false) {
         const qty = cartItem ? cartItem.quantity : 0;
 
         return `
-            <div class="product-card glass glass-hover rounded-3xl overflow-hidden flex flex-col group h-full transition-all duration-300 ${skipAnimation ? '!animation-none' : ''}" style="${skipAnimation ? 'animation: none;' : ''}">
-                <div class="h-48 md:h-64 overflow-hidden relative bg-black/20">
-                    <img src="${p.image}" alt="${p.name}" class="product-img w-full h-full object-cover transition-transform duration-700" loading="lazy" width="400" height="300" onerror="this.src='https://images.unsplash.com/photo-1578985545062-69928b1d9587?auto=format&fit=crop&w=500&q=80'">
-                    <div class="absolute top-4 right-4 glass px-3 py-1 rounded-full text-[10px] md:text-xs font-bold text-brand uppercase tracking-widest">${p.category}</div>
+            <div class="product-card glass glass-hover rounded-[2.5rem] overflow-hidden flex flex-col group h-full transition-all duration-300 ${skipAnimation ? '!animation-none' : ''}" style="${skipAnimation ? 'animation: none;' : ''}">
+                <div class="product-image-wrapper">
+                    <img src="${p.image}" alt="${p.name}" class="product-img" loading="lazy">
+                    <div class="absolute top-6 right-6 glass px-3 py-1 rounded-full text-[10px] md:text-xs font-bold text-brand uppercase tracking-widest">${p.category}</div>
                 </div>
-                <div class="p-5 md:p-7 flex flex-col flex-1">
-                    <div class="flex justify-between items-start mb-4 md:mb-6 gap-2">
-                        <h3 class="font-bold text-lg md:text-xl leading-tight flex-1">${escapeHTML(p.name)}</h3>
-                        <div class="text-brand font-bold text-lg md:text-2xl whitespace-nowrap">${formatCurrency(p.price)}</div>
+                <div class="p-6 md:p-8 flex flex-col flex-1 pt-0">
+                    <div class="flex flex-col mb-6 gap-2">
+                        <h3 class="font-bold text-lg md:text-xl leading-tight">${escapeHTML(p.name)}</h3>
+                        <div class="text-brand font-black text-2xl">${formatCurrency(p.price)}</div>
                     </div>
                     <div class="mt-auto">
                         ${qty === 0 ? `
@@ -365,8 +367,8 @@ function renderCartItems() {
         total += item.price * item.quantity;
         return `
             <div class="flex gap-4">
-                <div class="w-20 h-20 rounded-2xl overflow-hidden glass shrink-0">
-                    <img src="${item.image}" class="w-full h-full object-cover">
+                <div class="w-20 h-20 rounded-xl overflow-hidden glass shrink-0 p-2">
+                    <img src="${item.image}" class="w-full h-full object-contain">
                 </div>
                 <div class="flex-1 min-w-0">
                     <div class="flex justify-between items-start">
