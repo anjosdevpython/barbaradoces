@@ -27,28 +27,52 @@ const FALLBACK_DATA = {
 
 let BUSINESS_INFO = FALLBACK_DATA.businessInfo;
 let PRODUCTS = FALLBACK_DATA.products;
+let businessInfo = FALLBACK_DATA.businessInfo;
+let allProducts = FALLBACK_DATA.products;
 let cart = JSON.parse(localStorage.getItem('cart') || '[]');
 let currentCategory = 'Tudo';
 let searchTerm = '';
 
 // Load Data
 async function init() {
+    renderSkeletons();
     try {
         const response = await fetch('./public/db.json');
-        if (!response.ok) throw new Error('Network response was not ok');
-        const data = await response.json();
-        BUSINESS_INFO = data.businessInfo;
-        PRODUCTS = data.products;
+        if (response.ok) {
+            const data = await response.json();
+            businessInfo = data.businessInfo;
+            allProducts = data.products;
+        } else {
+            console.warn('Usando dados locais de fallback');
+            businessInfo = FALLBACK_DATA.businessInfo;
+            allProducts = FALLBACK_DATA.products;
+        }
     } catch (error) {
-        console.warn("Loading fallback data due to fetch error (likely CORS or file:// protocol):", error);
-        // Data is already set to FALLBACK_DATA
+        console.error('Erro ao carregar dados:', error);
+        businessInfo = FALLBACK_DATA.businessInfo;
+        allProducts = FALLBACK_DATA.products;
     } finally {
-        document.getElementById('year').innerText = new Date().getFullYear();
-        renderCategories();
-        renderProducts();
-        updateCartCount();
-        injectStructuredData();
+        // Artificial delay for better UX (so skeletons are visible)
+        setTimeout(() => {
+            document.getElementById('year').innerText = new Date().getFullYear();
+            renderCategories();
+            renderProducts();
+            updateCartCount();
+            injectStructuredData();
+        }, 800);
     }
+}
+
+function renderSkeletons() {
+    const grid = document.getElementById('products-grid');
+    grid.innerHTML = Array(6).fill(0).map(() => `
+        <div class="glass p-4 rounded-[2rem] border-white/5">
+            <div class="aspect-square skeleton rounded-2xl mb-4"></div>
+            <div class="h-4 skeleton w-3/4 mb-2 rounded"></div>
+            <div class="h-3 skeleton w-1/2 mb-4 rounded"></div>
+            <div class="h-10 skeleton w-full rounded-xl"></div>
+        </div>
+    `).join('');
 }
 
 function injectStructuredData() {
@@ -106,7 +130,7 @@ function injectProductSchema() {
 
     const schema = {
         "@context": "https://schema.org",
-        "@graph": PRODUCTS.map(p => ({
+        "@graph": allProducts.map(p => ({
             "@type": "Product",
             "name": p.name,
             "image": window.location.origin + p.image.substring(1),
@@ -126,10 +150,9 @@ function injectProductSchema() {
     script.textContent = JSON.stringify(schema);
 }
 
-init();
 
 function renderCategories() {
-    const categories = ['Tudo', ...new Set(PRODUCTS.map(p => p.category))];
+    const categories = ['Tudo', ...new Set(allProducts.map(p => p.category))];
     const container = document.getElementById('category-filters');
     if (!container) return;
 
@@ -176,7 +199,7 @@ function renderProducts(skipAnimation = false) {
     const container = document.getElementById('products-grid');
     if (!container) return;
 
-    const filtered = PRODUCTS.filter(p => {
+    const filtered = allProducts.filter(p => {
         const matchesCategory = currentCategory === 'Tudo' || p.category === currentCategory;
         const matchesSearch = p.name.toLowerCase().includes(searchTerm);
         return matchesCategory && matchesSearch;
@@ -231,7 +254,7 @@ function renderProducts(skipAnimation = false) {
 }
 
 function addToCart(id) {
-    const product = PRODUCTS.find(p => p.id === id);
+    const product = allProducts.find(p => p.id === id);
     cart.push({ ...product, quantity: 1 });
     saveCart(true); // true means skip re-rendering the full grid if possible
 }
@@ -279,13 +302,33 @@ function updateCartCount() {
     if (badge) {
         badge.innerText = total;
         badge.classList.toggle('hidden', total === 0);
+        if (total > 0) badge.classList.add('animate-bounce-short');
+        setTimeout(() => badge.classList.remove('animate-bounce-short'), 400);
     }
 
     if (navBadge) {
         navBadge.innerText = total;
         navBadge.classList.toggle('hidden', total === 0);
+        if (total > 0) navBadge.classList.add('animate-bounce-short');
+        setTimeout(() => navBadge.classList.remove('animate-bounce-short'), 400);
     }
 }
+
+// Mobile Tab Bar active state handling
+window.addEventListener('scroll', () => {
+    const scrollPos = window.scrollY;
+    const links = document.querySelectorAll('.mobile-tab-bar a');
+
+    if (scrollPos < 300) {
+        links.forEach(l => l.classList.remove('active'));
+        links[0].classList.add('active');
+    } else if (scrollPos > 300 && scrollPos < 1500) {
+        links.forEach(l => l.classList.remove('active'));
+        links[1].classList.add('active');
+    }
+});
+
+init();
 
 function toggleCart(show) {
     const drawer = document.getElementById('cart-drawer');
@@ -359,7 +402,7 @@ function checkout() {
     });
     msg += `\n💰 *Total: ${formatCurrency(total)}*`;
     msg += `\n\n_Como posso realizar o pagamento?_`;
-    window.open(`https://wa.me/${BUSINESS_INFO.whatsapp}?text=${encodeURIComponent(msg)}`, '_blank');
+    window.open(`https://wa.me/${businessInfo.whatsapp}?text=${encodeURIComponent(msg)}`, '_blank');
 }
 
 function goToPixFromCart() {
@@ -431,8 +474,8 @@ function generatePix() {
     }
 
     const amountStr = amount.toFixed(2);
-    const pixKey = BUSINESS_INFO.pixKey;
-    const name = BUSINESS_INFO.name.normalize("NFD").replace(/[\u0300-\u036f]/g, "").substring(0, 25);
+    const pixKey = businessInfo.pixKey;
+    const name = businessInfo.name.normalize("NFD").replace(/[\u0300-\u036f]/g, "").substring(0, 25);
     const city = "CURITIBA";
 
     // Tag 00: Payload Format Indicator (Fixed)
@@ -483,9 +526,22 @@ function generatePix() {
     const merchantEl = document.getElementById('pix-merchant-name');
 
     if (modal && qrImg && merchantEl) {
-        qrImg.src = `https://api.qrserver.com/v1/create-qr-code/?size=250x250&data=${encodeURIComponent(pixCode)}`;
-        merchantEl.innerText = BUSINESS_INFO.name;
-        modal.classList.remove('hidden');
+        // Use Local QR Code Generator (QRious)
+        const qrContainer = document.getElementById('pix-qr');
+
+        // Clear previous QR if any (though qrious handles replacement)
+        new QRious({
+            element: qrContainer,
+            value: pixCode,
+            size: 256,
+            padding: 4,
+            level: 'H',
+            foreground: '#000000',
+            background: '#ffffff'
+        });
+
+        merchantEl.innerText = businessInfo.name;
+        document.getElementById('pix-modal').classList.remove('hidden');
     }
 }
 

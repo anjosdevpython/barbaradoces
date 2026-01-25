@@ -4,7 +4,20 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#000000">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="apple-mobile-web-app-title" content="Bárbara Doces">
+
     <title>Bárbara Rosa | Doces Artesanais</title>
+
+    <!-- Wow Effect: Floating Ingredients -->
+    <div class="fixed inset-0 pointer-events-none overflow-hidden z-[-1] opacity-20">
+        <div class="absolute top-[10%] left-[5%] animate-float-slow text-4xl">🍓</div>
+        <div class="absolute top-[40%] right-[10%] animate-float-delayed text-4xl">🍫</div>
+        <div class="absolute bottom-[20%] left-[15%] animate-float-slow text-4xl">🍌</div>
+        <div class="absolute top-[70%] right-[20%] animate-float-delayed text-4xl">🍦</div>
+    </div>
 
     <!-- Meta Tags for SEO & Sharing -->
     <meta name="description"
@@ -416,7 +429,29 @@
         </div>
     </div>
 
+    <!-- Mobile Tab Bar (WebApp feel) -->
+    <nav class="mobile-tab-bar md:hidden">
+        <a href="#" class="active" onclick="window.scrollTo({top:0, behavior:'smooth'})">
+            <i class="fas fa-home"></i>
+            Início
+        </a>
+        <a href="#products-grid">
+            <i class="fas fa-store"></i>
+            Menu
+        </a>
+        <a href="https://wa.me/5541998541513" target="_blank">
+            <i class="fab fa-whatsapp"></i>
+            Pedir
+        </a>
+        <a href="#pix-section">
+            <i class="fas fa-qrcode"></i>
+            Pix
+        </a>
+    </nav>
+
     <!-- Scripts -->
+    <!-- External Dependencies -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/qrious/4.0.2/qrious.min.js"></script>
     <script src="./public/app.js"></script>
 </body>
 
