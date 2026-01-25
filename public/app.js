@@ -6,13 +6,13 @@ const FALLBACK_DATA = {
         name: "Bárbara Rosa"
     },
     products: [
-        { id: '1', name: "Bombom de morango", price: 12.00, category: 'Bombons', image: "./public/assets/products/bombom-morango-new.png" },
+        { id: '1', name: "Bombom de morango", price: 12.00, category: 'Bombons', image: "./public/assets/products/bombom-morango-real.jpeg" },
         { id: '2', name: "Bolo de pote", price: 10.00, category: 'Bolos', image: "./public/assets/products/bolo-de-pote-new.png" },
-        { id: '3', name: "Bombom de uva no pote", price: 10.00, category: 'Bombons', image: "./public/assets/products/bombom-uva-pote.jpeg" },
-        { id: '4', name: "Banoffe", price: 10.00, category: 'Sobremesas', image: "./public/assets/products/banoffe-new.png" },
-        { id: '5', name: "Pavê de morango", price: 10.00, category: 'Sobremesas', image: "./public/assets/products/pave-morango-new.png" },
-        { id: '6', name: "Pavê de ninho com Nutella", price: 10.00, category: 'Sobremesas', image: "./public/assets/products/pave-ninho-nutella-new.png" },
-        { id: '7', name: "Mousse de maracujá", price: 10.00, category: 'Sobremesas', image: "./public/assets/products/mousse-maracuja-new.png" },
+        { id: '3', name: "Bombom de uva no pote", price: 10.00, category: 'Bombons', image: "./public/assets/products/bombom-uva-real.jpeg" },
+        { id: '4', name: "Banoffe", price: 10.00, category: 'Sobremesas', image: "./public/assets/products/banoffe-real.jpeg" },
+        { id: '5', name: "Pavê de morango", price: 10.00, category: 'Sobremesas', image: "./public/assets/products/pave-morango-real.jpeg" },
+        { id: '6', name: "Pavê de ninho com Nutella", price: 10.00, category: 'Sobremesas', image: "./public/assets/products/pave-ninho-nutella-real.jpeg" },
+        { id: '7', name: "Pavê de maracujá", price: 10.00, category: 'Sobremesas', image: "./public/assets/products/pave-maracuja-real.jpeg" },
         { id: '8', name: "Palha Italiana Tradicional", price: 7.50, category: 'Palhas', image: "./public/assets/products/palha-tradicional-new.png" },
         { id: '9', name: "Palha de Oreo", price: 7.50, category: 'Palhas', image: "./public/assets/products/palha-oreo-new.png" },
         { id: '10', name: "Palha de Paçoca", price: 7.50, category: 'Palhas', image: "./public/assets/products/palha-pacoca-new.png" },
@@ -21,7 +21,7 @@ const FALLBACK_DATA = {
         { id: '13', name: "Cone trufado de ninho", price: 6.50, category: 'Cones', image: "./public/assets/products/cone-ninho-new.png" },
         { id: '14', name: "Cone trufado de nozes", price: 6.50, category: 'Cones', image: "./public/assets/products/cone-nozes-new.png" },
         { id: '15', name: "Cone trufado de pistache", price: 6.50, category: 'Cones', image: "./public/assets/products/cone-pistache-new.png" },
-        { id: '16', name: "Travessa de Banoffe (≈ 1,1kg)", price: 55.00, category: 'Travessas', image: "./public/assets/products/travessa-banoffe-new.png" }
+        { id: '16', name: "Travessa de Banoffe (≈ 1,1kg)", price: 55.00, category: 'Travessas', image: "./public/assets/products/travessa-banoffe-real.jpeg" }
     ]
 };
 

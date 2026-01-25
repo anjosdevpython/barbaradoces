@@ -10,7 +10,7 @@
       "name": "Bombom de morango",
       "price": 12.00,
       "category": "Bombons",
-      "image": "./public/assets/products/bombom-morango-new.png"
+      "image": "./public/assets/products/bombom-morango-real.jpeg"
     },
     {
       "id": "2",
@@ -24,35 +24,35 @@
       "name": "Bombom de uva no pote",
       "price": 10.00,
       "category": "Bombons",
-      "image": "./public/assets/products/bombom-uva-pote.jpeg"
+      "image": "./public/assets/products/bombom-uva-real.jpeg"
     },
     {
       "id": "4",
       "name": "Banoffe",
       "price": 10.00,
       "category": "Sobremesas",
-      "image": "./public/assets/products/banoffe-new.png"
+      "image": "./public/assets/products/banoffe-real.jpeg"
     },
     {
       "id": "5",
       "name": "Pavê de morango",
       "price": 10.00,
       "category": "Sobremesas",
-      "image": "./public/assets/products/pave-morango-new.png"
+      "image": "./public/assets/products/pave-morango-real.jpeg"
     },
     {
       "id": "6",
       "name": "Pavê de ninho com Nutella",
       "price": 10.00,
       "category": "Sobremesas",
-      "image": "./public/assets/products/pave-ninho-nutella-new.png"
+      "image": "./public/assets/products/pave-ninho-nutella-real.jpeg"
     },
     {
       "id": "7",
-      "name": "Mousse de maracujá",
+      "name": "Pavê de maracujá",
       "price": 10.00,
       "category": "Sobremesas",
-      "image": "./public/assets/products/mousse-maracuja-new.png"
+      "image": "./public/assets/products/pave-maracuja-real.jpeg"
     },
     {
       "id": "8",
@@ -115,7 +115,7 @@
       "name": "Travessa de Banoffe (≈ 1,1kg)",
       "price": 55.00,
       "category": "Travessas",
-      "image": "./public/assets/products/travessa-banoffe-new.png"
+      "image": "./public/assets/products/travessa-banoffe-real.jpeg"
     }
   ]
 }
