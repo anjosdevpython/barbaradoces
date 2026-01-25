@@ -66,9 +66,9 @@ async function init() {
 function renderSkeletons() {
     const grid = document.getElementById('products-grid');
     grid.innerHTML = Array(6).fill(0).map(() => `
-        <div class="glass p-0 rounded-[2.5rem] border-white/5 overflow-hidden">
-            <div class="aspect-square skeleton w-full mb-6"></div>
-            <div class="px-8 pb-8">
+        <div class="glass p-6 rounded-[2.5rem] border-white/5 overflow-hidden">
+            <div class="aspect-square skeleton w-full mb-6 rounded-[2rem]"></div>
+            <div class="px-2 pb-2">
                 <div class="h-6 skeleton w-3/4 mb-4 rounded-lg"></div>
                 <div class="h-8 skeleton w-1/2 mb-8 rounded-lg"></div>
                 <div class="h-14 skeleton w-full rounded-2xl"></div>
@@ -227,11 +227,11 @@ function renderProducts(skipAnimation = false) {
 
         return `
             <div class="product-card glass glass-hover rounded-[2.5rem] overflow-hidden flex flex-col group h-full transition-all duration-300 ${skipAnimation ? '!animation-none' : ''}" style="${skipAnimation ? 'animation: none;' : ''}">
-                <div class="product-image-wrapper">
+                <div class="product-image-wrapper relative">
                     <img src="${p.image}" alt="${p.name}" class="product-img" loading="lazy">
-                    <div class="absolute top-6 right-6 glass px-3 py-1 rounded-full text-[10px] md:text-xs font-bold text-brand uppercase tracking-widest">${p.category}</div>
+                    <div class="absolute top-9 right-9 glass px-3 py-1 rounded-full text-[10px] md:text-xs font-bold text-white/80 uppercase tracking-widest z-10">${p.category}</div>
                 </div>
-                <div class="p-6 md:p-8 flex flex-col flex-1 pt-0">
+                <div class="px-7 pb-7 flex flex-col flex-1">
                     <div class="flex flex-col mb-6 gap-2">
                         <h3 class="font-bold text-lg md:text-xl leading-tight">${escapeHTML(p.name)}</h3>
                         <div class="text-brand font-black text-2xl">${formatCurrency(p.price)}</div>
@@ -367,8 +367,8 @@ function renderCartItems() {
         total += item.price * item.quantity;
         return `
             <div class="flex gap-4">
-                <div class="w-20 h-20 rounded-xl overflow-hidden glass shrink-0 p-2">
-                    <img src="${item.image}" class="w-full h-full object-contain">
+                <div class="w-20 h-20 rounded-xl overflow-hidden glass shrink-0 p-0">
+                    <img src="${item.image}" class="w-full h-full object-cover">
                 </div>
                 <div class="flex-1 min-w-0">
                     <div class="flex justify-between items-start">
