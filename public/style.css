@@ -358,7 +358,7 @@ h3 {
         backdrop-filter: blur(20px);
         display: flex;
         justify-content: space-around;
-        padding: 15px 10px calc(15px + env(safe-area-inset-bottom));
+        padding: 20px 10px calc(20px + env(safe-area-inset-bottom));
         z-index: 100;
         border-top: 1px solid rgba(255, 255, 255, 0.1);
     }

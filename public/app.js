@@ -161,7 +161,8 @@ function renderCategories() {
     container.innerHTML = categories.map(cat => `
         <button onclick="setCategory('${cat}')" 
             role="tab" aria-selected="${currentCategory === cat}"
-            class="category-btn px-6 py-2 rounded-full text-sm font-bold transition-all border whitespace-nowrap ${currentCategory === cat
+            aria-label="Filtrar por ${escapeHTML(cat)}"
+            class="category-btn px-6 py-3 rounded-full text-sm font-bold transition-all border whitespace-nowrap ${currentCategory === cat
             ? 'bg-brand border-brand text-white shadow-lg'
             : 'bg-white/5 border-white/10 text-white/60 hover:border-white/20'
         }">${escapeHTML(cat)}</button>
