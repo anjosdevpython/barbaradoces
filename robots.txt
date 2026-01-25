@@ -1,4 +1,21 @@
 User-agent: *
 Allow: /
 
+# SEO: Sitemap
 Sitemap: https://barbaradoces.vercel.app/sitemap.xml
+
+# GEO: Allow AI crawlers for better citations
+User-agent: GPTBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: Claude-Web
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: Googlebot
+Allow: /

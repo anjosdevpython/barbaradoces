@@ -29,6 +29,8 @@
     <meta property="twitter:description" content="Doces artesanais feitos com carinho em Curitiba.">
     <meta property="twitter:image" content="https://barbaradoces.vercel.app/public/logo.png">
 
+    <meta name="robots" content="index, follow">
+
     <!-- JSON-LD Structured Data -->
     <script type="application/ld+json">
     {
@@ -101,20 +103,17 @@
     <nav id="desktop-nav"
         class="hidden md:flex fixed top-0 left-0 right-0 z-50 glass border-b border-white/10 px-8 py-4 items-center justify-between translate-y-[-100%] transition-transform duration-500">
         <div class="flex items-center gap-3">
-            <img src="./public/logo.png" alt="Logo" class="w-10 h-10 rounded-full border border-brand">
+            <img src="./public/logo.png" alt="Bárbara Rosa"
+                class="w-10 h-10 rounded-full border border-brand object-cover" width="40" height="40">
             <span class="font-bold tracking-tighter text-lg">Bárbara Rosa</span>
         </div>
         <div class="flex items-center gap-8 font-bold text-sm uppercase tracking-widest">
-            <a href="#" onclick="window.scrollTo({top: 0, behavior: 'smooth'}); return false;"
-                class="hover:text-brand transition-colors">Início</a>
             <a href="#products-grid"
                 onclick="document.getElementById('products-grid').scrollIntoView({behavior:'smooth'}); return false;"
-                class="hover:text-brand transition-colors">Menu</a>
-            <a href="#pix-section"
-                onclick="document.getElementById('pix-section').scrollIntoView({behavior:'smooth'}); return false;"
-                class="hover:text-brand transition-colors">Pix</a>
+                class="hover:text-brand transition-colors" aria-label="Ver nosso menu de doces">Menu</a>
             <button onclick="toggleCart(true)"
-                class="bg-brand/10 hover:bg-brand/20 px-4 py-2 rounded-full border border-brand/20 flex items-center gap-2 transition-all">
+                class="bg-brand/10 hover:bg-brand/20 px-4 py-2 rounded-full border border-brand/20 flex items-center gap-2 transition-all"
+                aria-label="Abrir meu carrinho">
                 <i class="fas fa-shopping-cart"></i>
                 Carrinho
             </button>
@@ -143,21 +142,49 @@
             </div>
             <h1 class="text-4xl md:text-7xl font-extrabold tracking-tight mb-2 md:mb-4">Bárbara Rosa</h1>
             <p class="text-brand font-semibold text-xl md:text-4xl">Doces Artesanais</p>
-            <p class="mt-4 text-sm md:text-lg opacity-80 italic max-w-sm md:max-w-xl mx-auto px-4">
+            <p class="mt-4 text-sm md:text-lg opacity-80 italic max-w-[50ch] mx-auto px-4 leading-relaxed">
                 “Doces feitos com carinho para adoçar seu dia 🍓🍫”
             </p>
+            <button onclick="document.getElementById('products-grid').scrollIntoView({behavior:'smooth'})"
+                class="mt-8 bg-brand text-white font-bold py-4 px-10 rounded-full shadow-2xl hover:scale-105 active:scale-95 transition-transform uppercase tracking-widest text-sm md:text-base">
+                Peça Agora
+            </button>
+
+
+
+
+            <!-- GEO: Structured Benefits for AI Extraction -->
+            <section class="mt-8 grid grid-cols-1 md:grid-cols-3 gap-4 max-w-4xl mx-auto text-center">
+                <div class="glass p-4 rounded-2xl border-white/5">
+                    <i class="fas fa-heart text-brand mb-2"></i>
+                    <h3 class="font-bold text-sm uppercase tracking-tighter">Feito com Amor</h3>
+                    <p class="text-[10px] opacity-60">Produção artesanal com carinho em cada detalhe.</p>
+                </div>
+                <div class="glass p-4 rounded-2xl border-white/5">
+                    <i class="fas fa-leaf text-brand mb-2"></i>
+                    <h3 class="font-bold text-sm uppercase tracking-tighter">Ingredientes Frescos</h3>
+                    <p class="text-[10px] opacity-60">Morangos selecionados e insumos de primeira linha.</p>
+                </div>
+                <div class="glass p-4 rounded-2xl border-white/5">
+                    <i class="fas fa-truck text-brand mb-2"></i>
+                    <h3 class="font-bold text-sm uppercase tracking-tighter">Entrega em Curitiba</h3>
+                    <p class="text-[10px] opacity-60">Receba suas delícias no conforto da sua casa.</p>
+                </div>
+            </section>
         </header>
 
         <!-- Search and Categories -->
         <div class="max-w-md mx-auto mb-8">
             <div class="relative">
+                <label for="search-input" class="sr-only">Procurar um doce</label>
                 <i class="fas fa-search absolute left-5 top-1/2 -translate-y-1/2 text-white/30"></i>
-                <input type="text" oninput="handleSearch(event)" placeholder="Procurar um doce..."
-                    class="w-full bg-white/5 border border-white/10 rounded-full py-4 pl-12 pr-6 outline-none focus:border-brand/50 focus:bg-white/10 transition-all font-medium">
+                <input type="text" id="search-input" oninput="handleSearch(event)" placeholder="Procurar um doce..."
+                    class="w-full bg-white/5 border border-white/10 rounded-full py-4 pl-12 pr-6 outline-none focus:border-brand/40 focus:ring-4 focus:ring-brand/10 transition-all font-medium placeholder:text-white/20">
             </div>
         </div>
 
-        <div id="category-filters" class="flex flex-wrap justify-center gap-2 mb-8 no-scrollbar">
+        <div id="category-filters" class="flex flex-wrap justify-center gap-2 mb-8 no-scrollbar" role="tablist"
+            aria-label="Categorias de doces">
             <!-- Categories will be injected here -->
         </div>
 
@@ -205,7 +232,9 @@
 
                 <div class="space-y-6">
                     <div class="relative group">
-                        <span class="absolute left-6 top-1/2 -translate-y-1/2 font-bold text-3xl text-brand">R$</span>
+                        <label for="pix-amount" class="sr-only">Valor do Pix</label>
+                        <span class="absolute left-6 top-1/2 -translate-y-1/2 font-bold text-3xl text-brand"
+                            aria-hidden="true">R$</span>
                         <input type="text" id="pix-amount" placeholder="0,00"
                             class="w-full bg-white/5 border border-white/10 rounded-3xl py-6 pl-16 pr-8 outline-none focus:border-brand/50 focus:bg-white/10 transition-all font-bold text-3xl placeholder:text-white/10">
                     </div>
@@ -215,6 +244,23 @@
                         GERAR QR CODE
                     </button>
                 </div>
+            </div>
+        </section>
+
+        <!-- E-E-A-T: Experience, Expertise, Authoritativeness, Trustworthiness -->
+        <section class="mt-20 max-w-4xl mx-auto text-left glass p-10 rounded-[2.5rem] border-white/5">
+            <h2 class="text-2xl font-bold text-brand uppercase tracking-widest mb-6">Sobre a Doceria</h2>
+            <div class="space-y-6 opacity-80 text-base md:text-lg leading-relaxed">
+                <p>
+                    A <strong>Bárbara Rosa Doces Artesanais</strong> nasceu em Curitiba com o propósito de transformar
+                    ingredientes selecionados em momentos de pura felicidade. Especializada em confeitaria artesanal,
+                    cada doce é produzido de forma única, garantindo frescor e o sabor autêntico que nossos clientes já
+                    conhecem e amam.
+                </p>
+                <p>
+                    Trabalhamos com os melhores fornecedores para garantir que cada <strong>bombom de morango</strong>
+                    ou <strong>travessa de banoffe</strong> chegue até você com a qualidade que você merece.
+                </p>
             </div>
         </section>
 
@@ -250,8 +296,43 @@
             </div>
         </div>
 
+        <!-- FAQ Section for GEO and User Trust -->
+        <section id="faq" class="mt-20 py-10">
+            <div class="flex items-center gap-6 mb-12">
+                <div class="h-px flex-1 bg-gradient-to-r from-transparent to-white/10"></div>
+                <h2 class="text-2xl md:text-3xl font-extrabold uppercase tracking-[0.3em] text-brand">Dúvidas Frequentes
+                </h2>
+                <div class="h-px flex-1 bg-gradient-to-l from-transparent to-white/10"></div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div class="glass p-6 rounded-3xl border-white/5">
+                    <h3 class="font-bold text-lg mb-2 text-brand">Como faço meu pedido?</h3>
+                    <p class="opacity-70 text-sm">Você pode escolher seus doces favoritos aqui no site e finalizar o
+                        pedido diretamente pelo WhatsApp para combinarmos a entrega ou retirada.</p>
+                </div>
+                <div class="glass p-6 rounded-3xl border-white/5">
+                    <h3 class="font-bold text-lg mb-2 text-brand">Quais as formas de pagamento?</h3>
+                    <p class="opacity-70 text-sm">Aceitamos Pix (com QR Code gerado aqui no site), cartões de
+                        débito/crédito e dinheiro na retirada.</p>
+                </div>
+                <div class="glass p-6 rounded-3xl border-white/5">
+                    <h3 class="font-bold text-lg mb-2 text-brand">Vocês fazem entregas?</h3>
+                    <p class="opacity-70 text-sm">Sim, realizamos entregas em diversas regiões de Curitiba. Consulte a
+                        taxa de entrega informando seu endereço via WhatsApp.</p>
+                </div>
+                <div class="glass p-6 rounded-3xl border-white/5">
+                    <h3 class="font-bold text-lg mb-2 text-brand">Os doces são frescos?</h3>
+                    <p class="opacity-70 text-sm">Sempre! Produzimos nossos doces artesanais diariamente para garantir o
+                        máximo de frescor e qualidade para você.</p>
+                </div>
+            </div>
+        </section>
+
         <!-- Footer -->
         <footer class="mt-20 text-center space-y-3 opacity-30 pb-24">
+            <p class="text-[9px] uppercase tracking-widest mb-4">Última atualização: <span
+                    id="last-updated">2026-01-25</span></p>
             <p class="text-sm font-semibold tracking-widest uppercase">&copy; <span id="year"></span> Bárbara Rosa</p>
             <p class="text-xs italic">Qualidade e ternura em cada pedaço.</p>
             <p class="text-[10px] uppercase tracking-tighter">
@@ -280,19 +361,21 @@
             <span class="text-[10px] uppercase font-bold tracking-widest">Pix</span>
         </button>
         <button onclick="toggleCart(true)"
-            class="flex flex-col items-center gap-1 text-white/60 focus:text-brand transition-colors relative">
+            class="flex flex-col items-center gap-1 text-white/60 focus:text-brand transition-colors relative"
+            aria-label="Abrir meu carrinho">
             <i class="fas fa-shopping-cart text-xl"></i>
             <span class="text-[10px] uppercase font-bold tracking-widest">Carrinho</span>
             <span id="nav-cart-count"
-                class="hidden absolute -top-1 -right-2 bg-brand text-white text-[8px] w-4 h-4 rounded-full flex items-center justify-center border border-zinc-900">0</span>
+                class="hidden absolute -top-1 -right-2 bg-brand text-white text-[8px] w-4 h-4 rounded-full flex items-center justify-center border border-zinc-900"
+                aria-live="polite">0</span>
         </button>
     </div>
 
     <!-- Floating Cart Button (Desktop) -->
-    <button onclick="toggleCart(true)"
+    <button onclick="toggleCart(true)" aria-label="Ver carrinho"
         class="hidden md:flex fixed bottom-6 right-6 z-40 bg-[#25D366] text-white p-5 rounded-full shadow-2xl items-center gap-3 transition-transform hover:scale-110 active:scale-90">
         <i class="fas fa-shopping-cart text-2xl"></i>
-        <span id="cart-count" class="hidden font-bold">0</span>
+        <span id="cart-count" class="hidden font-bold" aria-live="polite">0</span>
     </button>
 
     <!-- Cart Drawer -->
