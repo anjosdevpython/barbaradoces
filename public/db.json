@@ -52,14 +52,14 @@
       "name": "Mousse de maracujá",
       "price": 10.00,
       "category": "Sobremesas",
-      "image": "./public/assets/products/mousse-maracuja-real.jpeg"
+      "image": "./public/assets/products/mousse-maracuja-sticker.png"
     },
     {
       "id": "8",
       "name": "Palha Italiana Tradicional",
       "price": 7.50,
       "category": "Palhas",
-      "image": "./public/assets/products/palha-tradicional-new.png"
+      "image": "./public/assets/products/palha-tradicional-sticker.png"
     },
     {
       "id": "9",
@@ -80,7 +80,7 @@
       "name": "Cone trufado de maracujá",
       "price": 6.50,
       "category": "Cones",
-      "image": "./public/assets/products/cone-maracuja-new.png"
+      "image": "./public/assets/products/cone-maracuja-sticker.png"
     },
     {
       "id": "12",
