@@ -32,24 +32,21 @@
       "name": "Banoffe",
       "price": 10.00,
       "category": "Sobremesas",
-      "image": "./public/assets/products/banoffe-real.jpeg",
-      "label": "./public/assets/labels/banoffe.jpeg"
+      "image": "./public/assets/products/banoffe-final.png"
     },
     {
       "id": "5",
       "name": "Pavê de morango",
       "price": 10.00,
       "category": "Sobremesas",
-      "image": "./public/assets/products/pave-morango-real.jpeg",
-      "label": "./public/assets/labels/pavê de morango.jpeg"
+      "image": "./public/assets/products/pave-morango-final.png"
     },
     {
       "id": "6",
       "name": "Pavê de ninho com Nutella",
       "price": 10.00,
       "category": "Sobremesas",
-      "image": "./public/assets/products/pave-ninho-nutella-real.jpeg",
-      "label": "./public/assets/labels/Pavê de ninho com nutella.jpeg"
+      "image": "./public/assets/products/pave-ninho-nutella-final.png"
     },
     {
       "id": "7",
