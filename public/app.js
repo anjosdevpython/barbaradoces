@@ -230,7 +230,7 @@ function renderProducts(skipAnimation = false) {
             <div class="product-card glass glass-hover rounded-[2.5rem] overflow-hidden flex flex-col group h-full transition-all duration-300 ${skipAnimation ? '!animation-none' : ''}" style="${skipAnimation ? 'animation: none;' : ''}">
                 <div class="product-image-wrapper relative">
                     <img src="${p.image}" alt="${p.name}" class="product-img" loading="lazy">
-                    <div class="absolute top-9 right-9 glass px-3 py-1 rounded-full text-[10px] md:text-xs font-bold text-white/80 uppercase tracking-widest z-10">${p.category}</div>
+                    <div class="absolute top-8 right-8 product-tag">${escapeHTML(p.category)}</div>
                 </div>
                 <div class="px-7 pb-7 flex flex-col flex-1">
                     <div class="flex flex-col mb-6 gap-2">
