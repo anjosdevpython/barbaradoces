@@ -24,28 +24,32 @@
       "name": "Bombom de uva no pote",
       "price": 10.00,
       "category": "Bombons",
-      "image": "./public/assets/products/bombom-uva-real.jpeg"
+      "image": "./public/assets/products/bombom-uva-real.jpeg",
+      "label": "./public/assets/labels/bombom de uva.jpeg"
     },
     {
       "id": "4",
       "name": "Banoffe",
       "price": 10.00,
       "category": "Sobremesas",
-      "image": "./public/assets/products/banoffe-real.jpeg"
+      "image": "./public/assets/products/banoffe-real.jpeg",
+      "label": "./public/assets/labels/banoffe.jpeg"
     },
     {
       "id": "5",
       "name": "Pavê de morango",
       "price": 10.00,
       "category": "Sobremesas",
-      "image": "./public/assets/products/pave-morango-real.jpeg"
+      "image": "./public/assets/products/pave-morango-real.jpeg",
+      "label": "./public/assets/labels/pavê de morango.jpeg"
     },
     {
       "id": "6",
       "name": "Pavê de ninho com Nutella",
       "price": 10.00,
       "category": "Sobremesas",
-      "image": "./public/assets/products/pave-ninho-nutella-real.jpeg"
+      "image": "./public/assets/products/pave-ninho-nutella-real.jpeg",
+      "label": "./public/assets/labels/Pavê de ninho com nutella.jpeg"
     },
     {
       "id": "7",
@@ -59,63 +63,72 @@
       "name": "Palha Italiana Tradicional",
       "price": 7.50,
       "category": "Palhas",
-      "image": "./public/assets/products/palha-tradicional-new.png"
+      "image": "./public/assets/products/palha-tradicional-new.png",
+      "label": "./public/assets/labels/palha original.jpeg"
     },
     {
       "id": "9",
       "name": "Palha de Oreo",
       "price": 7.50,
       "category": "Palhas",
-      "image": "./public/assets/products/palha-oreo-new.png"
+      "image": "./public/assets/products/palha-oreo-new.png",
+      "label": "./public/assets/labels/palha de oreo.jpeg"
     },
     {
       "id": "10",
       "name": "Palha de Paçoca",
       "price": 7.50,
       "category": "Palhas",
-      "image": "./public/assets/products/palha-pacoca-new.png"
+      "image": "./public/assets/products/palha-pacoca-new.png",
+      "label": "./public/assets/labels/palha de paçoca.jpeg"
     },
     {
       "id": "11",
       "name": "Cone trufado de maracujá",
       "price": 6.50,
       "category": "Cones",
-      "image": "./public/assets/products/cone-maracuja-new.png"
+      "image": "./public/assets/products/cone-maracuja-new.png",
+      "label": "./public/assets/labels/cone de maracuja.jpeg"
     },
     {
       "id": "12",
       "name": "Cone trufado de limão",
       "price": 6.50,
       "category": "Cones",
-      "image": "./public/assets/products/cone-limao-new.png"
+      "image": "./public/assets/products/cone-limao-new.png",
+      "label": "./public/assets/labels/cone de limão.jpeg"
     },
     {
       "id": "13",
       "name": "Cone trufado de ninho",
       "price": 6.50,
       "category": "Cones",
-      "image": "./public/assets/products/cone-ninho-new.png"
+      "image": "./public/assets/products/cone-ninho-new.png",
+      "label": "./public/assets/labels/cone ninho com nutella.jpeg"
     },
     {
       "id": "14",
       "name": "Cone trufado de nozes",
       "price": 6.50,
       "category": "Cones",
-      "image": "./public/assets/products/cone-nozes-new.png"
+      "image": "./public/assets/products/cone-nozes-new.png",
+      "label": "./public/assets/labels/cone nozes.jpeg"
     },
     {
       "id": "15",
       "name": "Cone trufado de pistache",
       "price": 6.50,
       "category": "Cones",
-      "image": "./public/assets/products/cone-pistache-new.png"
+      "image": "./public/assets/products/cone-pistache-new.png",
+      "label": "./public/assets/labels/cone de pistache.jpeg"
     },
     {
       "id": "16",
       "name": "Travessa de Banoffe (≈ 1,1kg)",
       "price": 55.00,
       "category": "Travessas",
-      "image": "./public/assets/products/travessa-banoffe-real.jpeg"
+      "image": "./public/assets/products/travessa-banoffe-real.jpeg",
+      "label": "./public/assets/labels/banoffe.jpeg"
     }
   ]
 }

@@ -103,6 +103,31 @@ body .product-card-premium .product-tag {
     text-align: center !important;
 }
 
+/* Etiquetas Originais (Adesivos da Pasta Etiquetas) */
+.product-label-sticker {
+    width: 90px !important;
+    height: 90px !important;
+    border-radius: 50% !important;
+    object-fit: cover !important;
+    border: 2px solid white !important;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4) !important;
+    background: white !important;
+    transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275) !important;
+    transform: rotate(-10deg) !important;
+}
+
+.product-card-premium:hover .product-label-sticker {
+    transform: rotate(5deg) scale(1.15) translateY(-5px) !important;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.6) !important;
+}
+
+@media (max-width: 640px) {
+    .product-label-sticker {
+        width: 70px !important;
+        height: 70px !important;
+    }
+}
+
 ::-webkit-scrollbar {
     width: 6px;
 }
