@@ -14,10 +14,38 @@ body {
 }
 
 .glass {
-    background: rgba(255, 255, 255, 0.1);
-    backdrop-filter: blur(12px);
-    -webkit-backdrop-filter: blur(12px);
-    border: 1px solid rgba(255, 255, 255, 0.15);
+    background: rgba(18, 18, 18, 0.7);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.product-card-premium {
+    background: #121212;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    border-radius: 2.5rem;
+    position: relative;
+    overflow: hidden;
+    transition: all 0.5s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+.product-card-premium::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(180deg, rgba(223, 158, 155, 0.05) 0%, transparent 100%);
+    opacity: 0;
+    transition: opacity 0.5s ease;
+}
+
+.product-card-premium:hover {
+    transform: translateY(-10px);
+    border-color: rgba(223, 158, 155, 0.3);
+    box-shadow: 0 30px 60px -12px rgba(0, 0, 0, 0.5), 0 18px 36px -18px rgba(223, 158, 155, 0.2);
+}
+
+.product-card-premium:hover::before {
+    opacity: 1;
 }
 
 .glass-hover:hover {
@@ -80,18 +108,12 @@ body {
 }
 
 @media (min-width: 1024px) {
-    .product-card {
+    .product-card-premium {
         perspective: 1000px;
     }
 
-    .product-card:hover {
-        transform: translateY(-12px) rotateX(2deg) rotateY(1deg);
-        box-shadow: 0 30px 60px rgba(0, 0, 0, 0.5);
-        border-color: rgba(223, 158, 155, 0.4);
-    }
-
-    .product-card:hover .product-img {
-        transform: scale(1.1) translateZ(20px);
+    .product-card-premium:hover .product-img {
+        transform: scale(1.08) rotate(-1deg);
     }
 }
 

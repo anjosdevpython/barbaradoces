@@ -37,7 +37,7 @@ let searchTerm = '';
 async function init() {
     renderSkeletons();
     try {
-        const response = await fetch('./public/db.json');
+        const response = await fetch(`./public/db.json?v=${new Date().getTime()}`);
         if (response.ok) {
             const data = await response.json();
             businessInfo = data.businessInfo;
@@ -227,7 +227,7 @@ function renderProducts(skipAnimation = false) {
         const qty = cartItem ? cartItem.quantity : 0;
 
         return `
-            <div class="product-card glass glass-hover rounded-[2.5rem] overflow-hidden flex flex-col group h-full transition-all duration-300 ${skipAnimation ? '!animation-none' : ''}" style="${skipAnimation ? 'animation: none;' : ''}">
+            <div class="product-card-premium rounded-[2.5rem] flex flex-col group h-full transition-all duration-300 ${skipAnimation ? '!animation-none' : ''}" style="${skipAnimation ? 'animation: none;' : ''}">
                 <div class="product-image-wrapper relative">
                     <img src="${p.image}" alt="${p.name}" class="product-img" loading="lazy">
                     <div class="absolute top-8 right-8 product-tag">${escapeHTML(p.category)}</div>
