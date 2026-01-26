@@ -54,78 +54,26 @@ body {
     box-shadow: 0 15px 35px rgba(223, 158, 155, 0.1);
 }
 
-/* Etiqueta Digital Estilo Adesivo Real (Ondulado Branco e Rosa) */
-body .product-card-premium .product-tag {
-    background: white !important;
-    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='80' height='80' viewBox='0 0 80 80'%3E%3Cpath d='M40 2C42.4 2 44.1 4 46.5 4.5C48.9 5 50.8 4 53.2 5C55.6 6 56.6 8 59 9.5C61.4 11 63.3 11.5 65.7 13.5C67.5 15.5 67.5 18 69.1 20.4C70.7 22.8 72 23.9 73.6 26.3C75.2 28.7 74 31 74 33.4C74 35.8 75.3 38.2 74.7 40.6C74.1 43 71.7 44.1 71.1 46.5C70.5 48.9 70.5 51.4 69.1 53.8C67.7 56.2 65.3 56.7 63.9 59.1C62.5 61.5 61.5 64 59.1 65.4C56.7 66.8 54.3 65.8 51.9 67.2C49.5 68.6 48.4 71 46 71C43.6 71 42.5 68.6 40.1 67.2C37.7 65.8 35.3 66.8 32.9 65.4C30.5 64 29.5 61.5 28.1 59.1C26.7 56.7 24.3 56.7 22.9 53.8C21.5 51.4 21.5 48.9 20.9 46.5C20.3 44.1 17.9 43 17.3 40.6C16.7 38.2 18 35.8 18 33.4C18 31 16.8 28.7 18.4 26.3C20 23.9 21.3 22.8 22.9 20.4C24.5 18 24.5 15.5 26.3 13.5C28.7 11.5 30.6 11 33 9.5C35.4 8 36.4 6 38.8 5C41.2 4 43.1 5 45.5 4.5' fill='white' stroke='%23df9e9b' stroke-width='2' /%3E%3C/svg%3E") !important;
-    background-size: 100% 100% !important;
-    color: #df9e9b !important;
-    width: 65px !important;
-    height: 65px !important;
-    border-radius: 50% !important;
-    display: flex !important;
-    align-items: center !important;
-    justify-content: center !important;
-    font-size: 8px !important;
-    font-weight: 900 !important;
-    text-transform: uppercase !important;
-    letter-spacing: 0.05em !important;
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3) !important;
-    border: none !important;
-    display: inline-block !important;
-    z-index: 50 !important;
-    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275) !important;
-    pointer-events: none !important;
-    position: absolute !important;
-    top: 15px !important;
-    right: 15px !important;
-    transform: rotate(-5deg) !important;
-    padding: 0 !important;
-    line-height: normal !important;
+/* Etiquetas de Categoria (Estilo Glass Transparente) */
+.product-tag {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    color: white;
+    padding: 0.5rem 1rem;
+    border-radius: 9999px;
+    font-size: 10px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
 }
 
 .product-card-premium:hover .product-tag {
-    transform: translateY(-5px) scale(1.1) rotate(5deg) !important;
-    box-shadow: 0 15px 30px rgba(223, 158, 155, 0.2) !important;
-}
-
-/* Centraliza o texto dentro da etiqueta ondulada */
-.product-tag::before {
-    content: '' !important;
-    display: inline-block !important;
-    height: 100% !important;
-    vertical-align: middle !important;
-}
-
-.product-tag {
-    display: flex !important;
-    padding: 10px !important;
-    text-align: center !important;
-}
-
-/* Etiquetas Originais (Adesivos da Pasta Etiquetas) */
-.product-label-sticker {
-    width: 90px !important;
-    height: 90px !important;
-    border-radius: 50% !important;
-    object-fit: cover !important;
-    border: 2px solid white !important;
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4) !important;
-    background: white !important;
-    transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275) !important;
-    transform: rotate(-10deg) !important;
-}
-
-.product-card-premium:hover .product-label-sticker {
-    transform: rotate(5deg) scale(1.15) translateY(-5px) !important;
-    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.6) !important;
-}
-
-@media (max-width: 640px) {
-    .product-label-sticker {
-        width: 70px !important;
-        height: 70px !important;
-    }
+    background: rgba(255, 255, 255, 0.15);
+    border-color: rgba(255, 255, 255, 0.3);
 }
 
 ::-webkit-scrollbar {
