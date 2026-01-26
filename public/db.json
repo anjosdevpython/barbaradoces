@@ -49,10 +49,10 @@
     },
     {
       "id": "7",
-      "name": "Pavê de maracujá",
+      "name": "Mousse de maracujá",
       "price": 10.00,
       "category": "Sobremesas",
-      "image": "./public/assets/products/pave-maracuja-real.jpeg"
+      "image": "./public/assets/products/mousse-maracuja-real.jpeg"
     },
     {
       "id": "8",

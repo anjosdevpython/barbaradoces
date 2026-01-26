@@ -12,7 +12,7 @@ const FALLBACK_DATA = {
         { id: '4', name: "Banoffe", price: 10.00, category: 'Sobremesas', image: "./public/assets/products/banoffe-real.jpeg" },
         { id: '5', name: "Pavê de morango", price: 10.00, category: 'Sobremesas', image: "./public/assets/products/pave-morango-real.jpeg" },
         { id: '6', name: "Pavê de ninho com Nutella", price: 10.00, category: 'Sobremesas', image: "./public/assets/products/pave-ninho-nutella-real.jpeg" },
-        { id: '7', name: "Pavê de maracujá", price: 10.00, category: 'Sobremesas', image: "./public/assets/products/pave-maracuja-real.jpeg" },
+        { id: '7', name: "Mousse de maracujá", price: 10.00, category: 'Sobremesas', image: "./public/assets/products/mousse-maracuja-real.jpeg" },
         { id: '8', name: "Palha Italiana Tradicional", price: 7.50, category: 'Palhas', image: "./public/assets/products/palha-tradicional-new.png" },
         { id: '9', name: "Palha de Oreo", price: 7.50, category: 'Palhas', image: "./public/assets/products/palha-oreo-new.png" },
         { id: '10', name: "Palha de Paçoca", price: 7.50, category: 'Palhas', image: "./public/assets/products/palha-pacoca-new.png" },
