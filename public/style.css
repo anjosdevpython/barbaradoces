@@ -54,8 +54,9 @@ body {
     box-shadow: 0 15px 35px rgba(223, 158, 155, 0.1);
 }
 
-/* Etiquetas Estilo Adesivo Padronizado (Branco e Rosa) */
-.product-card-premium .product-tag {
+/* Etiquetas Estilo Adesivo Padronizado (BRANCO E ROSA) */
+body .product-card-premium .product-tag,
+body .product-tag {
     background-color: #ffffff !important;
     color: #df9e9b !important;
     padding: 0.6rem 1.4rem !important;
@@ -66,14 +67,13 @@ body {
     letter-spacing: 0.12em !important;
     box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2) !important;
     border: 2px solid #df9e9b !important;
-    /* Borda rosa como no adesivo físico */
     display: inline-block !important;
-    z-index: 30 !important;
+    z-index: 50 !important;
     transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275) !important;
-    pointer-events: none;
+    pointer-events: none !important;
 }
 
-.product-card-premium:hover .product-tag {
+body .product-card-premium:hover .product-tag {
     transform: translateY(-8px) scale(1.1) !important;
     box-shadow: 0 15px 30px rgba(223, 158, 155, 0.3) !important;
 }
